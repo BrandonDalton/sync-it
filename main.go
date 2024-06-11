@@ -8,9 +8,10 @@ import (
 )
 
 func main() {
+	log.Printf("[Main] Starting App")
 
-	localDirectory := flag.String("DIR", "", "Directory to watch")
-	gcpBucket := flag.String("GCP_BUCKET", "", "GCP Bucket Name")
+	localDirectory := flag.String("DIR", os.Getenv("DIR"), "Directory to watch")
+	gcpBucket := flag.String("GCP_BUCKET", os.Getenv("GCP_BUCKET"), "GCP Bucket Name")
 
 	flag.Parse()
 
